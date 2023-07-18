@@ -19,7 +19,7 @@ public class SwaggerConfig {
     @Bean
     public Docket docket(Environment environment) {
         Profiles profiles = Profiles.of("dev");
-        return new Docket(DocumentationType.SWAGGER_2).enable(environment.acceptsProfiles(profiles)) // swagger开关
+        return new Docket(DocumentationType.OAS_30).enable(environment.acceptsProfiles(profiles)) // swagger开关
                 .apiInfo(apiInfo()).groupName("分组").select()
                 .apis(RequestHandlerSelectors.basePackage("com.fengbiao.studycodes.controller") // 扫描指定包
                 ).build();
